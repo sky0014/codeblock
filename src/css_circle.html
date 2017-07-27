@@ -1,0 +1,87 @@
+<style type="text/css">
+
+.circle{
+	width: 200px;
+	height: 200px;
+	border: 10px solid green;
+	border-radius: 50%;	
+	box-sizing:border-box;
+}
+
+.wrapper{	
+	width: 100px;
+	height: 200px;	
+	overflow: hidden;	
+	transform-origin:100px 100px;
+	animation:rotate1 2s linear 2s;
+	animation-fill-mode:both ;
+}
+
+.c1 {
+	width: 100px;
+	height: 200px;	
+	overflow: hidden;	
+	float: left;	
+}
+
+.circle2{	
+	position: relative;
+	left: -100px;
+	width: 200px;
+	height: 200px;
+	border: 10px solid green;
+	border-radius: 50%;	
+	box-sizing:border-box;
+}
+
+.wrapper2{	
+	width: 100px;
+	height: 200px;	
+	overflow: hidden;	
+	transform-origin:0px 100px;
+	animation:rotate2 2s linear;
+	animation-fill-mode:both ;
+}
+
+.c2 {
+	width: 100px;
+	height: 200px;	
+	overflow: hidden;	
+	float: left;	
+}
+
+@keyframes rotate1 {
+	0% {
+		transform:rotate(0deg);
+	}
+
+	100% {
+		transform:rotate(180deg);	
+	}
+}
+
+@keyframes rotate2 {
+	0% {
+		transform:rotate(0deg);
+	}
+
+	100% {
+		transform:rotate(180deg);	
+	}
+}
+
+</style>
+
+<div class='c1'>
+	<div class='wrapper'>
+		<div class='circle'></div>	
+	</div>	
+</div>
+
+<div class='c2'>
+	<div class='wrapper2'>
+		<div class='circle2'></div>	
+	</div>	
+</div>
+
+
