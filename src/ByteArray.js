@@ -35,7 +35,7 @@ export default class ByteArray extends EventEmitter {
 
   readUint8() {
     let dv = new DataView(this.read(1));
-    return dv.getUint8();
+    return dv.getUint8(0);
   }
 
   readUint16() {
