@@ -3,13 +3,21 @@ import { EventEmitter } from "events";
 export default class ByteArray extends EventEmitter {
   static TAG = "ByteArray";
 
-  constructor(buffer, increase = 0x80000, littleEndian = false) {
+  static littleEndian = false;
+
+  constructor(buffer, increase = 0x80000, littleEndian) {
     super();
     this._increase = increase;
-    this._littleEndian = littleEndian;
-    this._buffer = buffer ? buffer : new ArrayBuffer(this._increase);
+    this._littleEndian =
+      littleEndian === undefined ? ByteArray.littleEndian : false;
     this._rposition = 0;
     this._wposition = 0;
+    if (buffer) {
+      this._buffer = buffer;
+      this._wposition += buffer.byteLength;
+    } else {
+      this._buffer = new ArrayBuffer(this._increase);
+    }
   }
 
   get buffer() {
