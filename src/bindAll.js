@@ -1,7 +1,6 @@
 /**
  * 遍历对象，绑定全部函数
- * @param {*} target 要绑定到的目标
- * @param {*} proto 要执行绑定的对象，省略则以target为目标
+ * @param {*} target 要绑定的目标
  * @returns {void}
  */
 export function bindAll(target) {
